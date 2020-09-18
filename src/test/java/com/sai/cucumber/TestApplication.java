@@ -4,7 +4,7 @@ import com.sai.javafx.TestApp;
 import javafx.stage.Stage;
 import org.testfx.api.FxRobot;
 import org.testfx.api.FxToolkit;
-import org.testfx.framework.junit.ApplicationTest;
+import org.testfx.framework.junit.ApplicationTest;//
 
 import java.util.concurrent.TimeoutException;
 
@@ -14,10 +14,11 @@ public class TestApplication extends ApplicationTest {
 
     static{
         //-Dtestfx.robot=glass -Dglass.platform=Monocle -Dmonocle.platform=Headless -Dprism.order=sw
-        System.setProperty("testfx.robot","glass");
-        System.setProperty("glass.platform","Monocle");
-        System.setProperty("monocle.platform","Headless");
-        System.setProperty("prism.order","sw");
+//        System.setProperty("testfx.robot","glass");
+//        System.setProperty("glass.platform","Monocle");
+//        System.setProperty("monocle.platform","Headless");
+//        System.setProperty("prism.order","sw");
+//        System.setProperty("prism.text","t2k");
     }
     public void launchApp(){
         try{

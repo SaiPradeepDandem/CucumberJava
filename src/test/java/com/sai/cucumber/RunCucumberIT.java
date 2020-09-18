@@ -6,10 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(monochrome = true,
-        features = { "src/test/resources/features" },
-        glue = { "com.sai.cucumber.steps" },
-        plugin = {"pretty","com.sai.cucumber.configuration.CucumberHook","html:target/cucumber-html-report",
-                  "json:target/cucumber-JVM-reports/cucumber.json"})
+        features = {"src/test/resources/features"},
+        glue = {"com.sai.cucumber.steps"},
+        plugin = {"pretty", "com.sai.cucumber.configuration.CucumberHook", "html:target/cucumber-html-report",
+                "json:target/cucumber-JVM-reports/cucumber.json",
+                "timeline:target/cucumber-JVM-reports"})
 public class RunCucumberIT {
 
 }

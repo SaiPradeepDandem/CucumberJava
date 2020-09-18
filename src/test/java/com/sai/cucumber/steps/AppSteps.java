@@ -4,6 +4,7 @@ import com.sai.cucumber.TestApplication;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseButton;
 import org.junit.Assert;
@@ -28,7 +29,15 @@ public class AppSteps {
     public void theLabelInShouldBe(int i, String val) {
         String txt = TestApplication.fxRobot.lookup("#label"+i).queryAs(Label.class).getText();
         if(!txt.equals(val)){
-            throw new AssertionError("E");
+            throw new AssertionError(String.format("Expected val '%s' but found '%s'",val,txt));
+        }
+    }
+
+    @Then("the popup {string} should be opened")
+    public void thePopupShouldBeOpened(String id) {
+        Node node = TestApplication.fxRobot.lookup("#"+id).query();
+        if(node==null){
+            throw new AssertionError("Unable to find the node "+id);
         }
     }
 }
